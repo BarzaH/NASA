@@ -1,0 +1,54 @@
+{% extends 'base_site.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+    <link type="text/css" rel="stylesheet" href="{% static "css/map_style.css" %}">
+{% endblock %}
+
+{% block extra_js %}
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+    <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+    <script src="http://github.com/evanplaice/jquery-csv/"></script>
+    <script type="text/javascript" src="{% static "js/map_operations.js" %}"></script>
+{% endblock %}
+
+
+{% block title %}OpenLayers Demo{% endblock %}
+
+
+
+{% block content %}
+
+    <div id="basicMap"
+         class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+    </div>
+
+
+    {% if percentage %}
+        <div class="modal fade show" id="confirmation" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+              style="display: block;">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Подтверждение</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="false">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form action="/" >
+                        <h3>Вероятность пожара на данный момент: {{ percentage }} %</h3>
+                        <div class="modal-footer">
+{#                            <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>#}
+                            <button type="submit" class="btn btn-primary">OK</button>
+                        </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
