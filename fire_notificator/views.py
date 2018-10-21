@@ -11,14 +11,14 @@ class FireMap(TemplateView):
         context = {}
         if "history" in request.GET and request.GET.get("history"):
             csv_file = pd.read_csv("/Users/mergalievibragim/Desktop/NASA/fire_notificator/utils/final_ds.csv")
-            points = [[x[0], x[1]] for x in csv_file.loc[:20, ["LATITUDE", "LONGITUDE"]].values]
+            points = [[x[0], x[1]] for x in csv_file.loc[:40, ["LATITUDE", "LONGITUDE"]].values]
             context["points"] = points
 
         return render(request, self.template_name, context)
 
     def post(self, request, *args, **kwargs):
 
-        rand_percentage = random.uniform(60,70)
+        rand_percentage = random.uniform(30,49)
         context = {"percentage": int(rand_percentage)}
         return render(request, self.template_name, context)
 

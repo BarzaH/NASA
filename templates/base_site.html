@@ -90,13 +90,13 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Широта</label>
-                                <input type="text" class="form-control" id="lat"
+                                <input type="text" class="form-control" id="lat1"
                                        placeholder="Введите широту нахождения центра интересующей местности">
                             </div>
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Долгота</label>
-                                <input type="text" class="form-control" id="lat"
+                                <input type="text" class="form-control" id="long1"
                                        placeholder="Введите долготу нахождения центра интересующей местности">
                             </div>
 
@@ -108,6 +108,7 @@
                             </div>
 
                             <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" onclick="current_pos();">Текущее местоположение</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
                         <button type="submit" class="btn btn-primary">Подписаться</button>
                     </div>
@@ -139,17 +140,18 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Широта</label>
-                                <input type="text" class="form-control" id="lat"
+                                <input type="text" class="form-control" id="lat2"
                                        placeholder="Введите широту нахождения пожара">
                             </div>
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Долгота</label>
-                                <input type="text" class="form-control" id="lat"
+                                <input type="text" class="form-control" id="long2"
                                        placeholder="Введите долготу нахождения пожара">
                             </div>
 
                             <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" onclick="current_pos();">Текущее местоположение</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
                         <input type="submit" class="btn btn-primary" value="Отправить">
                     </div>

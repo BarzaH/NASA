@@ -40,3 +40,20 @@ function add_fire(point) {
     // window.map.setCenter(lonLat, 15);
 }
 
+function current_pos() {
+ navigator.geolocation.getCurrentPosition(function success(position) {
+            var map_position = new OpenLayers.LonLat(position.coords.longitude, position.coords.latitude).transform(fromProjection, toProjection);
+
+            // var map_position = new OpenLayers.LonLat(49.7, 58.56).transform(fromProjection, toProjection);
+            window.map.setCenter(map_position, 11);
+
+            add_fire([position.coords.latitude, position.coords.longitude]);
+
+
+            document.getElementById("lat1").value  = position.coords.latitude;
+            document.getElementById("long1").value = position.coords.longitude;
+
+            document.getElementById("lat2").value  = position.coords.latitude;
+            document.getElementById("long2").value = position.coords.longitude;
+        });
+}
